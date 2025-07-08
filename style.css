@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background:  #4facfe;
+    background: #4facfe;
     color: white;
     padding: 30px 20px;
     text-align: center;
@@ -26,7 +26,6 @@ h2 {
     color: #0077cc;
 }
 
-
 table {
     width: 100%;
     border-collapse: separate;
@@ -39,4 +38,15 @@ td {
     padding: 10px;
     vertical-align: top;
     text-align: center;
+}
+
+.gallery-card {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease-in-out;
+}
+
+.gallery-card.visible {
+    opacity: 1;
+    transform: translateX(0);
 }
