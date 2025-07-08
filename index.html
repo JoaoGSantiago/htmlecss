@@ -1,69 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belezas de Arapiraca</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belezas de Arapiraca</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Belezas de Arapiraca</h1>
-    </header>
+<header>
+  <h1>Belezas de Arapiraca</h1>
+</header>
 
-    <div>
-        <section>
-            <h2>Bem-vindo às Belezas de Arapiraca!</h2>
-            <p>Conhecida como a "Capital do Fumo" e o "Coração do Agreste", Arapiraca é uma cidade vibrante e cheia de encantos em Alagoas. Descubra paisagens deslumbrantes, pontos turísticos marcantes e um povo acolhedor que fazem de Arapiraca um lugar único para se visitar e viver.</p>
-            <p>Nesta página, queremos te apresentar um pouco do que faz de Arapiraca um lugar tão especial, focando em suas paisagens e pontos de interesse que revelam a beleza da cidade.</p>
-        </section>
+<div id="main-content">
+  <section>
+    <h2>Bem-vindo às Belezas de Arapiraca!</h2>
+    <p>Arapiraca é uma cidade vibrante e cheia de encantos em Alagoas...</p>
+  </section>
 
-        <section>
-            <h2>Galeria de Paisagens</h2>
-            <table>
-                <tr>
-                    <td>
-                        <img src="cecicunha.jpeg" alt="Ceci Cunha" width="300">
-                        <p>O Parque Municipal Ceci Cunha, ideal para lazer e contato com a natureza.</p>
-                    </td>
-                    <td>
-                        <img src="perucaba.jpg" alt="Lagoa da Perucaba" width="300">
-                        <p>A beleza serena da Lagoa da Perucaba.</p>
-                    </td>
-                    <td>
-                        <img src="centro.jpeg" alt="centro de Arapiraca" width="300">
-                        <p>A vista panorâmica do centro de Arapiraca, mostrando a arquitetura e o dinamismo da cidade.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="igreja.jpeg" alt="Igreja Matriz de Nossa Senhora do Bom Conselho" width="300">
-                        <p>A Igreja Matriz de Nossa Senhora do Bom Conselho, um marco histórico e arquitetônico.</p>
-                    </td>
-                    <td>
-                        <img src="shopping.jpeg" alt="Shopping Arapiraca" width="300">
-                        <p>Shopping de Arapiraca, um belo lugar para passear e gastar dinheiro.</p>
-                    </td>
-                    <td>
-                        <img src="espaco_cultural.jpeg" alt="Espaço cultural em Arapiraca durante um evento" width="300">
-                        <p>Espaços culturais e praças que pulsam com a vida e os eventos da cidade.</p>
-                    </td>
-                </tr>
-            </table>
-        </section>
+  <section>
+    <h2>Galeria de Paisagens</h2>
+    <table>
+      <tr class="gallery-row">
+        <td class="gallery-card">
+          <img src="cecicunha.jpeg" alt="Ceci Cunha" width="300">
+          <p>Parque Ceci Cunha</p>
+          <button onclick="navigateTo('cecicunha')">Ver mais</button>
+        </td>
+        <td class="gallery-card">
+          <img src="perucaba.jpg" alt="Lagoa da Perucaba" width="300">
+          <p>Lagoa da Perucaba</p>
+          <button onclick="navigateTo('perucaba')">Ver mais</button>
+        </td>
+        <td class="gallery-card">
+          <img src="centro.jpeg" alt="Centro" width="300">
+          <p>Centro da Cidade</p>
+          <button onclick="navigateTo('centro')">Ver mais</button>
+        </td>
+      </tr>
+      <tr class="gallery-row">
+        <td class="gallery-card">
+          <img src="igreja.jpeg" alt="Igreja Matriz" width="300">
+          <p>Igreja Matriz</p>
+          <button onclick="navigateTo('igreja')">Ver mais</button>
+        </td>
+        <td class="gallery-card">
+          <img src="shopping.jpeg" alt="Shopping" width="300">
+          <p>Shopping Arapiraca</p>
+          <button onclick="navigateTo('shopping')">Ver mais</button>
+        </td>
+        <td class="gallery-card">
+          <img src="espaco_cultural.jpeg" alt="Espaço Cultural" width="300">
+          <p>Espaço Cultural</p>
+          <button onclick="navigateTo('cultural')">Ver mais</button>
+        </td>
+      </tr>
+    </table>
+  </section>
 
-        <section>
-            <h2>Pontos de Interesse</h2>
-            <p>Além das paisagens, Arapiraca oferece diversos pontos de interesse que valem a pena conhecer:</p>
-            <ul>
-                <li><strong>Mercado Público Municipal:</strong> Um centro de comércio vibrante, onde você pode encontrar produtos locais e sentir o pulso da cidade.</li>
-                <li><strong>Praça Luiz Pereira Lima:</strong> Um local de encontro e lazer, ideal para desfrutar de um fim de tarde.</li>
-                <li><strong>Bosque das Arapiracas:</strong> Uma área verde para caminhadas e momentos de tranquilidade.</li>
-                <li><strong>Memorial da Mulher Camponesa:</strong> Um espaço dedicado à história e à cultura local, com foco na mulher do campo.</li>
-            </ul>
-        </section>
-    </div>
+  <section>
+    <h2>Formulário de Contato</h2>
+    <form onsubmit="return validarContato()">
+      <input type="text" id="nome" placeholder="Seu nome"><br><br>
+      <input type="email" id="email" placeholder="Seu e-mail"><br><br>
+      <textarea id="mensagem" placeholder="Sua mensagem"></textarea><br><br>
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="mensagem-erro" style="color:red;"></p>
+  </section>
 
+  <section>
+    <h2>Inscreva-se para novidades</h2>
+    <form onsubmit="return validarInscricao()">
+      <input type="email" id="inscricaoEmail" placeholder="Seu melhor e-mail">
+      <button type="submit">Inscrever</button>
+    </form>
+    <p id="mensagem-inscricao" style="color:green;"></p>
+  </section>
+
+  <section>
+    <h2>Pontos de Interesse</h2>
+    <ul>
+      <li><strong>Mercado Público</strong></li>
+      <li><strong>Praça Luiz Pereira Lima</strong></li>
+      <li><strong>Bosque das Arapiracas</strong></li>
+      <li><strong>Memorial da Mulher Camponesa</strong></li>
+    </ul>
+  </section>
+</div>
+
+<div id="rota-conteudo" style="display:none;"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
