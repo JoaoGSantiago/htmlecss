@@ -2,60 +2,41 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Belezas de Arapiraca</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-  <h1>Belezas de Arapiraca</h1>
-</header>
-
-<div id="main-content">
-  <section>
-    <h2>Bem-vindo às Belezas de Arapiraca!</h2>
-    <p>Arapiraca é uma cidade vibrante e cheia de encantos em Alagoas...</p>
-  </section>
-
+  <header>
+    <h1>Belezas de Arapiraca</h1>
+  </header>
   <section>
     <h2>Galeria de Paisagens</h2>
-    <table>
-      <tr class="gallery-row">
-        <td class="gallery-card">
-          <img src="cecicunha.jpeg" alt="Ceci Cunha" width="300">
-          <p>Parque Ceci Cunha</p>
-          <button onclick="navigateTo('cecicunha')">Ver mais</button>
-        </td>
-        <td class="gallery-card">
-          <img src="perucaba.jpg" alt="Lagoa da Perucaba" width="300">
-          <p>Lagoa da Perucaba</p>
-          <button onclick="navigateTo('perucaba')">Ver mais</button>
-        </td>
-        <td class="gallery-card">
-          <img src="centro.jpeg" alt="Centro" width="300">
-          <p>Centro da Cidade</p>
-          <button onclick="navigateTo('centro')">Ver mais</button>
-        </td>
-      </tr>
-      <tr class="gallery-row">
-        <td class="gallery-card">
-          <img src="igreja.jpeg" alt="Igreja Matriz" width="300">
-          <p>Igreja Matriz</p>
-          <button onclick="navigateTo('igreja')">Ver mais</button>
-        </td>
-        <td class="gallery-card">
-          <img src="shopping.jpeg" alt="Shopping" width="300">
-          <p>Shopping Arapiraca</p>
-          <button onclick="navigateTo('shopping')">Ver mais</button>
-        </td>
-        <td class="gallery-card">
-          <img src="espaco_cultural.jpeg" alt="Espaço Cultural" width="300">
-          <p>Espaço Cultural</p>
-          <button onclick="navigateTo('cultural')">Ver mais</button>
-        </td>
-      </tr>
-    </table>
+    <div class="cards">
+      <a href="cecicunha/" class="card">
+        <img src="imagens/cecicunha.jpeg" alt="Parque Ceci Cunha">
+        <p>Parque Ceci Cunha</p>
+      </a>
+      <a href="perucaba/" class="card">
+        <img src="imagens/perucaba.jpg" alt="Lagoa da Perucaba">
+        <p>Lagoa da Perucaba</p>
+      </a>
+      <a href="centro/" class="card">
+        <img src="imagens/centro.jpeg" alt="Centro de Arapiraca">
+        <p>Centro de Arapiraca</p>
+      </a>
+      <a href="igreja/" class="card">
+        <img src="imagens/igreja.jpeg" alt="Igreja Matriz de Arapiraca">
+        <p>Igreja Matriz de Arapiraca</p>
+      </a>
+      <a href="shopping/" class="card">
+        <img src="imagens/shopping.jpeg" alt="Shopping Arapiraca">
+        <p>Shopping Arapiraca</p>
+      </a>
+      <a href="cultural/" class="card">
+        <img src="imagens/espaco_cultural.jpeg" alt="Espaços Culturais">
+        <p>Espaços Culturais</p>
+      </a>
+    </div>
   </section>
 
   <section>
@@ -78,19 +59,43 @@
     <p id="mensagem-inscricao" style="color:green;"></p>
   </section>
 
-  <section>
-    <h2>Pontos de Interesse</h2>
-    <ul>
-      <li><strong>Mercado Público</strong></li>
-      <li><strong>Praça Luiz Pereira Lima</strong></li>
-      <li><strong>Bosque das Arapiracas</strong></li>
-      <li><strong>Memorial da Mulher Camponesa</strong></li>
-    </ul>
-  </section>
-</div>
+  <script>
+    function validarContato() {
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const mensagem = document.getElementById('mensagem').value;
+      const erro = document.getElementById('mensagem-erro');
 
-<div id="rota-conteudo" style="display:none;"></div>
+      if (!nome || !email || !mensagem) {
+        erro.textContent = "Por favor, preencha todos os campos.";
+        return false;
+      }
 
-<script src="script.js"></script>
+      if (!email.includes('@') || !email.includes('.')) {
+        erro.textContent = "Digite um e-mail válido.";
+        return false;
+      }
+
+      erro.textContent = "";
+      alert("Mensagem enviada com sucesso!");
+      return true;
+    }
+
+    function validarInscricao() {
+      const email = document.getElementById('inscricaoEmail').value;
+      const msg = document.getElementById('mensagem-inscricao');
+
+      if (!email.includes('@') || !email.includes('.')) {
+        msg.style.color = "red";
+        msg.textContent = "Digite um e-mail válido.";
+        return false;
+      }
+
+      msg.style.color = "green";
+      msg.textContent = "Inscrição realizada com sucesso!";
+      return true;
+    }
+  </script>
+
 </body>
 </html>
