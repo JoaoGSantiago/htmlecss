@@ -59,43 +59,7 @@
     <p id="mensagem-inscricao" style="color:green;"></p>
   </section>
 
-  <script>
-    function validarContato() {
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-      const mensagem = document.getElementById('mensagem').value;
-      const erro = document.getElementById('mensagem-erro');
-
-      if (!nome || !email || !mensagem) {
-        erro.textContent = "Por favor, preencha todos os campos.";
-        return false;
-      }
-
-      if (!email.includes('@') || !email.includes('.')) {
-        erro.textContent = "Digite um e-mail válido.";
-        return false;
-      }
-
-      erro.textContent = "";
-      alert("Mensagem enviada com sucesso!");
-      return true;
-    }
-
-    function validarInscricao() {
-      const email = document.getElementById('inscricaoEmail').value;
-      const msg = document.getElementById('mensagem-inscricao');
-
-      if (!email.includes('@') || !email.includes('.')) {
-        msg.style.color = "red";
-        msg.textContent = "Digite um e-mail válido.";
-        return false;
-      }
-
-      msg.style.color = "green";
-      msg.textContent = "Inscrição realizada com sucesso!";
-      return true;
-    }
-  </script>
+ <script src="script.js"></script>
 
 </body>
 </html>
