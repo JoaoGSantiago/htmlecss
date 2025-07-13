@@ -28,11 +28,7 @@ section {
   animation: slide 1s forwards;
   animation-delay: 0.3s;
 }
-img {
-  max-width: 100%;
-  border-radius: 12px;
-  margin-bottom: 20px;
-}
+
 button, a.button {
   display: inline-block;
   background: #0077cc;
